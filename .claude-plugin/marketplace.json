@@ -1,0 +1,20 @@
+{
+  "name": "algoum-marketplace",
+  "description": "algoum MCP server for AI assistants",
+  "version": "1.0.0",
+  "owner": {
+    "name": "fi4all",
+    "url": "https://github.com/fi4all"
+  },
+  "plugins": [
+    {
+      "name": "algoum",
+      "description": "SEC EDGAR insider trades, 8-K events and 13F holdings for your AI assistant",
+      "version": "1.0.0",
+      "tags": [
+        "mcp"
+      ],
+      "source": "./"
+    }
+  ]
+}

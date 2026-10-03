@@ -1,0 +1,38 @@
+name: algoum
+version: 1.0.0
+description: SEC EDGAR insider trades (Form 4/5), 8-K events and 13F holdings for your AI assistant
+author: fi4all
+repository: https://github.com/fi4all/algoum_mcp
+license: MIT
+keywords:
+  - mcp
+  - sec
+  - edgar
+  - insider-trading
+  - 13f
+  - 8-k
+dependencies:
+  mcp:
+    - name: algoum
+      registry: false
+      transport: http
+      url: https://api.algoum.de/v1/mcp
+      headers:
+        Authorization: "Bearer ${ALGOUM_API_KEY}"
+
+marketplace:
+  name: algoum-marketplace
+  description: algoum MCP server for AI assistants
+  version: 1.0.0
+  owner:
+    name: fi4all
+    url: https://github.com/fi4all
+  outputs:
+    claude: {}
+  packages:
+    - name: algoum
+      description: SEC EDGAR insider trades, 8-K events and 13F holdings for your AI assistant
+      source: ./
+      version: 1.0.0
+      tags:
+        - mcp

@@ -92,6 +92,11 @@ curl -s https://api.algoum.de/v1/mcp \
 
 ### 3. Add the server to your assistant
 
+Some assistants can install the server for you – look for **algoum** in the
+[MCP Registry](https://registry.modelcontextprotocol.io/?q=algoum). With
+[APM](#apm-agent-package-manager) two commands set it up for your assistants. Otherwise use the
+values below.
+
 |                |                                               |
 |----------------|-----------------------------------------------|
 | URL            | `https://api.algoum.de/v1/mcp`                |
@@ -211,8 +216,24 @@ Add the server to `~/.copilot/mcp-config.json`:
 
 Run `/mcp` in the CLI to see `algoum` connected. The file stays on your machine.
 
+#### APM (Agent Package Manager)
+
+[APM](https://github.com/microsoft/apm) installs the server for the assistant you choose. Run it in
+your project. It reads the key from the environment variable you exported in step 1, so the key
+does not end up in any file:
+
+```sh
+apm marketplace add fi4all/algoum_mcp
+apm install algoum@algoum-marketplace --target vscode
+```
+
+Replace `vscode` with your assistant, for example `copilot`, `claude` or `cursor`. `apm targets`
+lists all supported ones. Without `--target`, APM needs an existing assistant folder in the project.
+
 ## Links
 
 - [algoum portal](https://algoum.de/)
 - [API reference](https://api.algoum.de/v1/docs/)
+- [MCP Registry entry](https://registry.modelcontextprotocol.io/?q=algoum)
+- [Glama listing](https://glama.ai/mcp/connectors/de.algoum.api/algoum)
 - [Contact us](https://algoum.de/contact) – questions, feedback and anything you would like to see next
